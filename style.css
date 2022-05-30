@@ -1,0 +1,230 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway', 'Helvetica', 'Arial', 'sans-serif';
+    box-sizing: border-box;
+}
+
+:root {
+    --lightgreen: #F3F9D9;
+    --green: #7A9C0D;
+    --darkgreen: #28590c;
+}
+
+body {
+    background-color: #7A9C0D; /* Fallback*/
+    background-color: var(--green);
+}
+
+.logo_so_nuts {
+    width: 200px;
+    margin: 20px auto 0;
+    display: block;
+    border-radius: 50%;
+    opacity: 0;
+    animation: showLogo 0.75s forwards 0.25s;
+    animation-timing-function: linear;
+}
+
+@keyframes showLogo {
+    0% {
+        opacity: 0;
+        transform: translateY(-120%);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(5%);
+    }
+    85% {
+        transform: translateY(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;   
+}
+
+.title {
+    opacity: 0;
+    animation: showTekst 1s forwards 1s;
+}
+
+.titel_tekst {
+    color: white;
+    text-align: center;
+    font-size: 1.3em;
+    margin: 10px 40px 0;
+    font-weight: bold;
+    opacity: 0;
+    animation: showTekst 1s forwards 1s;
+}
+
+@keyframes showTekst {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.button {
+    background-color: white;
+    color: #28590c;
+    color: var(--darkgreen);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2.5px solid #28590c;
+    border: 2.5px solid var(--darkgreen);
+}
+
+.homebutton {
+    border: none;
+    margin: 0 auto;
+    bottom: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.homebutton a {
+    padding: 20px 40px;
+    font-size: 1.5em;
+}
+
+/* Container */
+.container {
+    width: calc(100vw - 40px);
+    max-width: 700px;
+    min-height: calc(100vh - 100px);
+    background-color: white;
+    border-radius: 10px;
+    animation: showContainer 1s forwards 0s;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    margin: 20px auto;
+}
+
+@keyframes showContainer {
+    0% {
+        margin-top: 100vh;
+    }
+
+    100% {
+        margin-top: 20px;
+    }
+}
+
+/* Instructies */
+.uitleg_tekst {
+    padding: 20px 20px 0;
+    font-size: 1.2em;
+}
+
+.button_naar_vragenlijst {
+    border: none;
+    margin: 20px auto 0;
+    display: block;
+    background-color: white;
+}
+
+.button_naar_vragenlijst a {
+    padding: 20px;
+    display: block;
+    margin: 20px;
+    font-size: 1.5em;
+}
+
+/* Vragenlijst */
+#vraag_nummer {
+    text-align: right;
+    padding: 15px 15px 0;
+    font-size: 1.3em;
+    color: #28590c;
+    color: var(--darkgreen);
+}
+
+#vraag_stelling {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 20px 40px 0;
+    font-weight: bold;
+    color: #28590c;
+    color: var(--darkgreen);
+}
+
+#antwoord_input { /* Bij open vragen */
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    font-size: 1.3em;
+    padding: 0px 10px;
+    border-radius: 10px;
+    color: #28590c;
+    color: var(--darkgreen);
+}
+
+#antwoord_invoer { /* Bij multiple choice vragen */
+    display: block;
+    width: calc(100% - 40px);
+    margin: 20px 0 0 20px;
+}
+
+.antwoord_optie label {
+    background-color: #F3F9D9;
+    background-color: var(--lightgreen);
+    width: 100%;
+    display: block;
+    padding: 10px;
+    font-size: 1.3em;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    border: 2px solid #28590c;
+    border: 2px solid var(--darkgreen);
+    color: #28590c;
+    color: var(--darkgreen);
+}
+
+@supports selector(.antwoord_optie input:checked+label) {
+    .antwoord_optie input {
+        display: none;
+    }
+    .antwoord_optie input:checked+label {
+        background-color: #7A9C0D;
+        background-color: var(--green);
+        color: white;
+    }
+}
+
+#button_vorige_vraag, #button_volgende_vraag {
+    width: 135px;
+    padding: 20px;
+    font-size: 1.2em;
+    margin: 40px 0 20px;
+}
+
+#button_vorige_vraag {
+    margin-left: 20px;
+}
+
+#button_volgende_vraag {
+    float: right;
+    margin-right: 20px;
+}
+
+.invisible {
+    display: none !important;
+}
