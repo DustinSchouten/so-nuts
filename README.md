@@ -1,4 +1,7 @@
-# Meesterproef
+# SO-NUTS web app
+Dit project bevat een web app voor het project SO-NUTS. Dit project is bedoeld voor 55-plussers om gezond te blijven leven op het gebied van voeding en beweging. De app bevat een aantal vragenlijsten waar de gebruiker doorheen dient te lopen. Na het beantwoorden van alle vragen krijgt de gebruiker de optie om uit verschillende zogenaamde intakelijsten te kiezen. Het doel van de app is om de mensen nieuwe (gezondere) gewoontes te laten creëren.
+
+Bij dit project is gebruikgemaakt van HTML, CSS, JavaScript, Express en Node.js Ook is er gebruikgemaakt van een externe API om data op te halen waaruit de vragenlijsten worden gegenereerd.
 
 Link naar live project: https://dustinschouten.github.io/so-nuts/
 

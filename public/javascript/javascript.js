@@ -1,6 +1,11 @@
 const aantal_vragen = vragenlijst['questions'].length;
 const container_element = document.querySelector('#container'); // Alle variabelenamen met '_element' staan voor opgehaalde DOM elementen.
 
+// De tekst genereren die weergeeft hoeveel vragen er in deze vragenlijst zitten
+let aantal_vragen_text_html_string = '<p id="aantal_vragen_text">Deze vragenlijst bevat '+aantal_vragen.toString()+' vragen</p>';
+container_element.insertAdjacentHTML('afterbegin',aantal_vragen_text_html_string); // Alle variabelenamen met _html_string staan voor HTML dat gegenereerd wordt en getoond wordt in de app
+const created_aantal_vragen_text_element = document.querySelector('#aantal_vragen_text');
+
 function renderVraag(vraag_nummer) {
     const vraag_object = vragenlijst['questions'][vraag_nummer];
     const vraag_type = vraag_object['type']; // Er zijn verschillende soorten vragen, zoals open vragen (type=string) en multiple-choice vragen (type=choice).
@@ -8,13 +13,13 @@ function renderVraag(vraag_nummer) {
 
     // Voor iedere vraag een vraagcontainer genereren en renderen
     let vraag_container_html_string = '<section class="vraag_container" data-id="vraag_'+(vraag_nummer+1).toString()+'">';
-    container_element.insertAdjacentHTML('afterbegin',vraag_container_html_string); // Alle variabelenamen met _html_string staan voor HTML dat gegenereerd wordt en getoond wordt in de app
+    created_aantal_vragen_text_element.insertAdjacentHTML('afterend',vraag_container_html_string); // Alle variabelenamen met _html_string staan voor HTML dat gegenereerd wordt en getoond wordt in de app
     let created_vraag_container_element = document.querySelector('[data-id="vraag_'+(vraag_nummer+1).toString()+'"]');
 
     // Het vraagnummer genereren en renderen
     let vraag_nummer_element = document.createElement('p');
     vraag_nummer_element.classList.add('vraag_nummer');
-    vraag_nummer_element.textContent = 'Vraag ' + (vraag_nummer+1).toString() + ' / ' + aantal_vragen.toString();
+    vraag_nummer_element.textContent = vraag_nummer+1;
     created_vraag_container_element.appendChild(vraag_nummer_element);
 
     // De vraagstelling genereren en renderen
@@ -32,7 +37,7 @@ function renderVraag(vraag_nummer) {
 
     // De antwoord
     if (vraag_type == 'string') {
-        const antwoord_input_html_string = '<input type="text" class="antwoord_input"></input>';
+        const antwoord_input_html_string = '<input type="text" class="antwoord_input" placeholder="Voer hier het antwoord in..."></input>';
         created_antwoord_invoer_container_element.insertAdjacentHTML('beforeend', antwoord_input_html_string);
     }
     if (vraag_type == 'choice' || vraag_type == 'open-choice') {
@@ -45,7 +50,7 @@ function renderVraag(vraag_nummer) {
         })
     }
     if (vraag_type == 'open-choice') {
-        const antwoord_input_html_string = '<input type="text" class="antwoord_input"</input>';
+        const antwoord_input_html_string = '<input type="text" class="antwoord_input" placeholder="Voer hier het antwoord in..."></input>';
         created_antwoord_invoer_container_element.insertAdjacentHTML('beforeend', antwoord_input_html_string);
     }
 }
