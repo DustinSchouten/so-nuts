@@ -99,12 +99,12 @@ h1 {
 }
 
 .homebutton a {
-    padding: 20px 40px;
+    padding: 15px 30px;
     font-size: 1.5em;
 }
 
 /* Container */
-.container {
+#container {
     width: calc(100vw - 40px);
     max-width: 700px;
     min-height: calc(100vh - 100px);
@@ -139,31 +139,43 @@ h1 {
 }
 
 .button_naar_vragenlijst a {
-    padding: 20px;
+    padding: 15px;
     display: block;
     margin: 20px;
     font-size: 1.5em;
 }
 
 /* Vragenlijst */
-#vraag_nummer {
+.vraag_container {
+    margin-bottom: 5px;
+    padding: 20px;
+    border-bottom: 4px solid var(--green);
+    border-bottom: 4px solid #7A9C0D;
+}
+
+.vraag_nummer {
     text-align: right;
-    padding: 15px 15px 0;
     font-size: 1.3em;
     color: #28590c;
     color: var(--darkgreen);
 }
 
-#vraag_stelling {
+.vraag_stelling {
     text-align: center;
     font-size: 1.5em;
-    margin: 20px 40px 0;
+    margin-top: 20px;
     font-weight: bold;
     color: #28590c;
     color: var(--darkgreen);
 }
 
-#antwoord_input { /* Bij open vragen */
+.antwoord_invoer_container {
+    display: block;
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
+
+.antwoord_input { /* Bij open vragen */
     display: block;
     margin: 20px auto 0;
     width: 100%;
@@ -174,12 +186,6 @@ h1 {
     border-radius: 10px;
     color: #28590c;
     color: var(--darkgreen);
-}
-
-#antwoord_invoer { /* Bij multiple choice vragen */
-    display: block;
-    width: calc(100% - 40px);
-    margin: 20px 0 0 20px;
 }
 
 .antwoord_optie label {
@@ -210,8 +216,8 @@ h1 {
 }
 
 #button_vorige_vraag, #button_volgende_vraag {
-    width: 135px;
-    padding: 20px;
+    width: 115px;
+    padding: 10px;
     font-size: 1.2em;
     margin: 40px 0 20px;
 }
