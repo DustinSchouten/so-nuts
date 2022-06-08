@@ -3,10 +3,13 @@
     <h1><%- pageTitle %></h1>
 </header>
 <main id="container">
-    <button id="button_volgende" class="button">Volgende</button>
+    <div class="button_div">
+        <button id="button_volgende"><a href="/vragen_over_voeding" class="button">Volgende</a></button>
+    </div>
 </main>
+<script type="module" src='javascript/app.js'></script>
 
-<script src="vragenlijst.js"></script>
+<!-- <script src="vragenlijst.js"></script>
 <script src="responseExamples.js"></script>
-<script src="javascript.js"></script>
+<script src="javascript.js"></script> -->
 <%- include('./partials/foot') %>

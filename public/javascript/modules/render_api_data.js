@@ -36,12 +36,12 @@ export function renderVraag(vraag_nummer,vraag_object) {
 
 
     // De antwoord
-    if (vraag_type == 'string') {
+    if (vraag_type == null) {
         const antwoord_input_html_string = '<input type="text" class="antwoord_input" placeholder="Voer hier het antwoord in..."></input>';
         created_antwoord_invoer_container_element.insertAdjacentHTML('beforeend', antwoord_input_html_string);
     }
-    if (vraag_type == 'choice' || vraag_type == 'open-choice') {
-        const antwoord_opties_lijst = vraag_object['options'];
+    if (vraag_type == 'multiChoice' || vraag_type == 'multiOpenChoice') {
+        const antwoord_opties_lijst = vraag_object['answerOptions'];
         antwoord_opties_lijst.forEach((antwoord_optie_object,idx) => {
             const antwoord_optie = antwoord_optie_object['text'];
             const antwoord_optie_id = antwoord_optie_object['id'];
@@ -49,7 +49,7 @@ export function renderVraag(vraag_nummer,vraag_object) {
             created_antwoord_invoer_container_element.insertAdjacentHTML('beforeend', antwoord_optie_html_string);
         })
     }
-    if (vraag_type == 'open-choice') {
+    if (vraag_type == 'multiOpenChoice') {
         const antwoord_input_html_string = '<input type="text" class="antwoord_input" placeholder="Voer hier het antwoord in..."></input>';
         created_antwoord_invoer_container_element.insertAdjacentHTML('beforeend', antwoord_input_html_string);
     }

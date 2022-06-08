@@ -5,29 +5,8 @@
     box-sizing: border-box;
 }
 
-:root {
-
-    /* Kleuren algemeen */
-    --lichtgrijs_algemeen: #f4f4f4;
-    --groen_algemeen: #a4ab7d;
-    --grijs_algemeen: #666;
-    
-    /* Kleuren persoonlijke vragen*/
-    --groen_algemeen: #a4ab7d;
-
-    /* Kleuren vragen voeding*/
-    --groen: #007409;
-    --geel: #c5c500;
-    --rood: #bd0101;
-    /* Kleuren vragen beweging*/
-
-}
-
 body {
-    background-color: var(--groen_algemeen);
-
-    /* background: linear-gradient(135deg, var(--groen) 0%, #c5c500 50%, #bd0101 100%); */
-    /* background: linear-gradient(135deg, rgba(176,177,203,1) 0%, rgba(12,166,205,1) 100%); */
+    background: var(--background_color);
     background-attachment: fixed;
 }
 
@@ -95,11 +74,11 @@ h1 {
 
 .button {
     background-color: white;
-    color: var(--grijs_algemeen);
+    color: var(--main_color);
     text-decoration: none;
     font-weight: bold;
     border-radius: 10px;
-    border: 2.5px solid var(--grijs_algemeen);
+    border: 2.5px solid var(--main_color);
 }
 
 .homebutton {
@@ -163,23 +142,23 @@ h1 {
     text-align: center;
     padding: 20px 0;
     font-size: 1.3em;
-    border-bottom: 5px solid #A4AB7D;
+    border-bottom: 5px solid var(--bottom_border_color);
 }
 
 .vraag_container {
     margin-bottom: 5px;
     padding: 20px;
-    border-bottom: 5px solid #A4AB7D;
+    border-bottom: 5px solid var(--bottom_border_color);
 }
 
 .vraag_nummer {
     text-align: center;
     font-size: 2em;
     width: 50px;
-    color: black;
+    color: var(--main_color);
     height: 50px;
     border-radius: 50%;
-    background-color: #dfdfdf;
+    background-color: var(--vraagnummer_background_color);
     align-items: center;
     line-height: 50px;
     font-weight: bold;
@@ -190,7 +169,7 @@ h1 {
     font-size: 1.5em;
     margin-top: 20px;
     font-weight: bold;
-    color: var(--grijs_algemeen);
+    color: var(--main_color);
 }
 
 .antwoord_invoer_container {
@@ -204,11 +183,11 @@ h1 {
     margin: 20px auto 0;
     width: 100%;
     height: 40px;
-    border: 1px solid var(--grijs_algemeen);
+    border: 1px solid var(--main_color);
     font-size: 1.3em;
     padding: 0px 10px;
     border-radius: 10px;
-    color: var(--grijs_algemeen);
+    color: var(--main_color);
 }
 
 .antwoord_input::placeholder,::-ms-input-placeholder {
@@ -217,8 +196,7 @@ h1 {
 }
 
 .antwoord_optie label {
-    background-color: #F3F9D9;
-    background-color: var(--lichtgrijs_algemeen);
+    background-color: var(--mc_answer_option_color);
     width: 100%;
     display: block;
     padding: 10px;
@@ -226,10 +204,8 @@ h1 {
     border-radius: 10px;
     margin-bottom: 15px;
     font-weight: bold;
-    border: 2px solid #28590c;
-    border: 2px solid var(--grijs_algemeen);
-    color: #28590c;
-    color: var(--grijs_algemeen);
+    border: 2px solid var(--main_color);
+    color: var(--main_color);
 }
 
 @supports selector(.antwoord_optie input:checked+label) {
@@ -237,7 +213,7 @@ h1 {
         display: none;
     }
     .antwoord_optie input:checked+label {
-        background-color: var(--groen_algemeen);
+        background-color: var(--mc_answer_option_color_selected);
         color: white;
     }
 }

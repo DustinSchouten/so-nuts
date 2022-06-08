@@ -9,19 +9,19 @@ app.set("views","./views");
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-    res.render('index',{'pageTitle':'SO-NUTS'});
+    res.render('index',{'pageTitle':'SO-NUTS','pageStyle':'/css/homestyle.css'});
 })
 
 app.get('/instructies', function (req, res) {
-    res.render('instructies',{'pageTitle':'Instructies'});
+    res.render('instructies',{'pageTitle':'Instructies','pageStyle':'/css/homestyle.css'});
 })
 
 app.get('/persoonlijke_vragen', function (req, res) {
-    res.render('persoonlijke_vragen',{'pageTitle':'Persoonlijke vragen'});
+    res.render('persoonlijke_vragen',{'pageTitle':'Persoonlijke vragen','pageStyle':'/css/persoonlijke_vragen_style.css'});
 })
 
 app.get('/vragen_over_voeding', function (req, res) {
-    res.render('vragen_over_voeding',{'pageTitle':'Vragen over voeding'});
+    res.render('vragen_over_voeding',{'pageTitle':'Vragen over voeding','pageStyle':'/css/vragen_over_voeding_style.css'});
 })
 
 

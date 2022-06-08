@@ -1,0 +1,8 @@
+:root {
+    --mc_answer_option_color: #f4f4f4;
+    --background_color: linear-gradient(135deg, #007409 0%, #c5c500 50%, #bd0101 100%);
+    --main_color: #3e6a4b;
+    --mc_answer_option_color_selected: rosybrown;
+    --bottom_border_color: rosybrown;
+    --vraagnummer_background_color: #e8ff84;
+}

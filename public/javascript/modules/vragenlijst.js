@@ -1,4 +1,4 @@
-const vragenlijst_voorbeeld = {
+const vragenlijst_voorbeeld_json = {
     "id": "1",
     "title": "...",
     "description": "....",
@@ -90,6 +90,6 @@ const vragenlijst_voorbeeld = {
         }
     ]
 }
-export { vragenlijst_voorbeeld };
+export { vragenlijst_voorbeeld_json };
 
-console.log(vragenlijst_voorbeeld)
+// console.log(vragenlijst_voorbeeld)
