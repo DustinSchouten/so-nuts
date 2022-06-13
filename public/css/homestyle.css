@@ -1,8 +1,8 @@
 :root {
     /* Kleuren algemeen */
     --main_color: #666;
-    --background_color: #a4ab7d;
-    --bottom_border_color: #a4ab7d;
+    --background_color: #a0ad56;
+    --bottom_border_color: #a0ad56;
 }
 
     /* background: linear-gradient(135deg, var(--groen) 0%, #c5c500 50%, #bd0101 100%); */

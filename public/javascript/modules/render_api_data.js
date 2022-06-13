@@ -12,22 +12,25 @@ export function renderVraag(vraag_nummer,vraag_object) {
     // Voor iedere vraag een vraagcontainer genereren en renderen
     let vraag_container_html_string = '<section class="vraag_container" data-id="vraag_'+(vraag_nummer+1).toString()+'">';
     const created_aantal_vragen_text_element = document.querySelector('#aantal_vragen_text');
-
     created_aantal_vragen_text_element.insertAdjacentHTML('afterend',vraag_container_html_string); // Alle variabelenamen met _html_string staan voor HTML dat gegenereerd wordt en getoond wordt in de app
     let created_vraag_container_element = document.querySelector('[data-id="vraag_'+(vraag_nummer+1).toString()+'"]');
+
+    const created_vraag_nummer_en_stelling_html_string = '<section class="vraag_nummer_en_stelling_container" data-id="vraag_nummer_en_stelling_container_'+(vraag_nummer+1).toString()+'">';
+    created_vraag_container_element.insertAdjacentHTML('beforeend',created_vraag_nummer_en_stelling_html_string);
+    let created_vraag_nummer_en_stelling_element = document.querySelector('[data-id="vraag_nummer_en_stelling_container_'+(vraag_nummer+1).toString()+'"]');
 
     // Het vraagnummer genereren en renderen
     let vraag_nummer_element = document.createElement('p');
     vraag_nummer_element.classList.add('vraag_nummer');
     vraag_nummer_element.textContent = vraag_nummer+1;
-    created_vraag_container_element.appendChild(vraag_nummer_element);
+    created_vraag_nummer_en_stelling_element.appendChild(vraag_nummer_element);
 
     // De vraagstelling genereren en renderen
     const vraag_stelling = vraag_object['text'];
     let vraag_stelling_element = document.createElement('p');
     vraag_stelling_element.classList.add('vraag_stelling');
     vraag_stelling_element.textContent = vraag_stelling;
-    created_vraag_container_element.appendChild(vraag_stelling_element);
+    created_vraag_nummer_en_stelling_element.appendChild(vraag_stelling_element);
 
     // Een section genaamd antwoord_invoer genereren en renderen. In deze section worden de invoervelden en multiple-choice opties geplaatst.
     let antwoord_invoer_html_string = '<section class="antwoord_invoer_container"></section>';
@@ -50,7 +53,8 @@ export function renderVraag(vraag_nummer,vraag_object) {
         })
     }
     if (vraag_type == 'multiOpenChoice') {
-        const antwoord_input_html_string = '<input type="text" class="antwoord_input" placeholder="Voer hier het antwoord in..."></input>';
+        const openLabel_text = vraag_object['openLabel'];
+        const antwoord_input_html_string = '<p class="openLabel_text">'+openLabel_text+'</p><input type="text" class="antwoord_input" placeholder="Voer hier het antwoord in..."></input>';
         created_antwoord_invoer_container_element.insertAdjacentHTML('beforeend', antwoord_input_html_string);
     }
 }

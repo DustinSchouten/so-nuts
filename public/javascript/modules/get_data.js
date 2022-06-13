@@ -11,13 +11,14 @@ export async function getData() {
         return response.json()
       }
       else {
-        return vragenlijst_voorbeeld_json;
+        return vragenlijst_voorbeeld_json; // Fallback
       }
     })
 
     .then(function(data) {
+      console.log(data)
+
         // hideLoadingState()
-        console.log(data)
         const aantal_vragen = data['questions'].length;
                 
         renderAantalVragenText(aantal_vragen)

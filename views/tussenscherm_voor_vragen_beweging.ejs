@@ -1,0 +1,21 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+<main id="container">
+    <section class="stappen_section">
+        <div class="stap_div stap_afgerond">
+            <p>Persoonlijke vragen</p>
+            <%- include('./partials/cirkel_stap') %>
+        </div>
+        <div class="stap_div stap_afgerond">
+            <p>Intakelijst voeding</p>
+            <%- include('./partials/cirkel_stap') %>
+        </div>
+        <div class="stap_div volgende_stap laatste_cirkel_stap">
+            <p>Intakelijst beweging</p>
+            <%- include('./partials/cirkel_stap') %>
+        </div>
+    </section>
+    <p class="uitleg_tekst">Klik op 'volgende' om naar de intakelijst over beweging te gaan.</p>
+    <button class="button_naar_vragenlijst"><a href="/vragen_over_beweging" class="button">Volgende</a></button>
+</main>
+<%- include('./partials/foot') %>

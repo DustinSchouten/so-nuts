@@ -42,7 +42,22 @@ h1 {
     text-align: center;
     color: white;
     font-weight: bold;
-    margin-top: 20px;   
+    margin-top: 20px;
+    font-size: 1.75em;
+}
+
+.header_left_icon,.header_right_icon {
+    width: 30px;
+    position: absolute;
+    top: 20px;
+}
+
+.header_left_icon {
+    left: 15px;    
+}
+
+.header_right_icon {
+    right: 15px;
 }
 
 .title {
@@ -95,9 +110,22 @@ h1 {
     font-size: 1.5em;
 }
 
+#progress_bar {
+    background: #a0a0f1;
+    height: 10px;
+    position: fixed;
+    top: 0;
+}
+
+.info_icon {
+    color: blue;
+    font-size: 1em;
+    font-weight: bold;
+}
+
 /* Container */
 #container {
-    width: calc(100vw - 40px);
+    width: calc(100vw - 30px);
     max-width: 700px;
     min-height: calc(100vh - 100px);
     background-color: white;
@@ -122,6 +150,71 @@ h1 {
     font-size: 1.2em;
 }
 
+.stappen_section {
+    width: calc(100% - 40px);
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.stappen_section .stap_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 100px;
+    max-width: 130px;
+}
+
+.stappen_section .cirkel_stap {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--vraagnummer_background_color);
+    margin-top: 10px;
+    position: relative;
+}
+
+.stappen_section .volgende_stap p {
+    font-weight: bold;
+}
+
+.stappen_section .stap_afgerond .cirkel_stap {
+    background-color: var(--background_color);
+}
+
+.stappen_section .volgende_stap .cirkel_stap {
+    background-color: white;
+    border: 4px solid var(--background_color);
+}
+
+.stappen_section .vragenlijst_afgerond_icon {
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.stappen_section .stap_div:not(.stap_afgerond) .vragenlijst_afgerond_icon {
+    display: none;
+}
+
+.stappen_section .stap_div:not(.laatste_cirkel_stap) .cirkel_stap::before { /* de streepjes tussen de stappen cirkels */
+    content: '';
+    position: absolute;
+    background-color: var(--vraagnummer_background_color);
+    height: 7.5px;
+    top: calc(50% - 5px);
+    left: 48px;
+    width: 100px;
+}
+
+.stappen_section .stap_afgerond .cirkel_stap::before {
+    background-color: var(--background_color);
+}
+
 .button_naar_vragenlijst {
     border: none;
     margin: 20px auto 0;
@@ -140,7 +233,7 @@ h1 {
 
 #aantal_vragen_text {
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
     font-size: 1.3em;
     border-bottom: 5px solid var(--bottom_border_color);
 }
@@ -151,6 +244,10 @@ h1 {
     border-bottom: 5px solid var(--bottom_border_color);
 }
 
+.vraag_nummer_en_stelling_container {
+    display: flex;
+}
+
 .vraag_nummer {
     text-align: center;
     font-size: 2em;
@@ -159,17 +256,16 @@ h1 {
     height: 50px;
     border-radius: 50%;
     background-color: var(--vraagnummer_background_color);
-    align-items: center;
     line-height: 50px;
     font-weight: bold;
 }
 
 .vraag_stelling {
-    text-align: center;
-    font-size: 1.5em;
-    margin-top: 20px;
+    font-size: 1.4em;
     font-weight: bold;
+    margin-left: 10px;
     color: var(--main_color);
+    width: calc(100% - 60px);
 }
 
 .antwoord_invoer_container {
@@ -193,6 +289,12 @@ h1 {
 .antwoord_input::placeholder,::-ms-input-placeholder {
     opacity: 1;
     font-size: 0.8em;
+}
+
+.openLabel_text {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: var(--main_color);
 }
 
 .antwoord_optie label {
@@ -236,17 +338,70 @@ h1 {
     font-size: 1.5em;
 }
 
-/* #button_vorige {
-    margin-left: 20px;
+/* Dashboard */
+.action_plan_filter_section {
+    display: flex;
+    align-items: center;
+    margin: 20px;
 }
 
-#button_volgende {
-    margin-right: 20px;
-} */
-
-.invisible {
-    display: none !important;
+.action_plan_filter_section label {
+    margin: 20px 20px 0 0;
+    font-size: 1.2em;
+    font-weight: bold;
 }
+
+#action_plan_filter {
+    width: calc(100% - 100px);
+    height: 50px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    padding-left: 5px;
+    border: 2px solid var(--main_color);
+    border-radius: 10px;
+}
+
+
+.action_plan {
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    min-height: 200px;
+    border: 2px solid var(--main_color);
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.action_plan:first-child {
+    margin-top: 20px;
+}
+
+.action_plan:last-child {
+    margin-bottom: 20px;
+}
+
+.action_plan_image {
+    width: 30px;
+    margin: 7.5px 10px 10px;
+    float: left;
+}
+
+.action_plan h2 {
+    font-size: 1.2em;
+    padding: 10px;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    margin: -0.5px 0 0 0;
+}
+
+.action_plan.action_plan_voeding h2 {
+    background: var(--background_color_voeding);
+    color: black;
+}
+
+.action_plan.action_plan_beweging h2 {
+    background: var(--background_color_beweging);
+}
+
 
 @media (prefers-reduced-motion: reduce) {
     .logo_so_nuts,
@@ -257,4 +412,9 @@ h1 {
         transform: none;
         animation-name: none;
     }
+}
+
+
+.invisible {
+    display: none !important;
 }
