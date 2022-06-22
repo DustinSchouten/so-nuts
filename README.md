@@ -80,7 +80,7 @@ Voorafgaand aan het project heeft de opdrachtgever de volgende user-stories opge
 
 Bij Chippr hebben ze gezegd dat het haast niet mogelijk is om binnen vijf weken aan al deze punten volledig te voldoen en dat ze later zelf de applicatie gaan bouwen met Flutter. Wat zij vooral aan ons gevraagd hebben is zorgen voor creatieve ideeën.
 
-De eerste user story heb ik volledig kunnen uitwerken. De andere twee heb ik gedeeltelijk kunnen realiseren. Ik heb namelik geen scherm kunnen maken waarbij je als gebruiker, voordat je naar het dashboard gaat, alvast kan aangeven aan welke action plans je wilt werken. Ook heb ik voor nu in mijn eindproduct slechts 'hardcoded' een paar action plans en een paar begin- en einddatums (als planning) toegevoegd.
+De eerste user story heb ik volledig kunnen uitwerken. De andere twee heb ik gedeeltelijk kunnen realiseren. Ik heb namelijk geen scherm kunnen maken waarbij je als gebruiker, voordat je naar het dashboard gaat, alvast kan aangeven aan welke action plans je wilt werken. Ook heb ik voor nu in mijn eindproduct slechts 'hardcoded' een paar action plans en een paar begin- en einddatums (als planning) toegevoegd.
 
 #### Aandachtspunten voor overdracht aan opdrachtgever
 Wanneer de opdrachtgever Chippr besluit om mijn project verder uit te bouwen, dan heb ik de volgende aandachtspunten die ze kunnen meenemen:
