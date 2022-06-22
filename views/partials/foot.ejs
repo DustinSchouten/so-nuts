@@ -1,3 +1,9 @@
-        <!-- <script>"serviceWorker"in navigator&&navigator.serviceWorker.register("javascript/service_worker.js").then(function(){console.log("Service Worker Registered")})</script> -->
+        <script>
+            if('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                    .register('/javascript/service_worker.js')
+                    .then(function() { console.log(""); });
+            }
+        </script>
     </body>
 </html>

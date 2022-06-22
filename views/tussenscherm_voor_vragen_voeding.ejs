@@ -15,7 +15,9 @@
             <%- include('./partials/cirkel_stap') %>
         </div>
     </section>
-    <p class="uitleg_tekst">Klik op 'volgende' om naar de intakelijst over voeding te gaan.</p>
-    <button class="button_naar_vragenlijst"><a href="/vragen_over_voeding" class="button">Volgende</a></button>
-</main>
+    <p class="uitleg_tekst">Hartelijk dank voor het invullen van de persoonlijke vragen! Klik op 'volgende' om naar de intakelijst over voeding te gaan.</p>
+    <div class="button_div">
+        <button id="button_vorige"><a href="/persoonlijke_vragen" class="button" aria-label="Ga terug naar vorige pagina">Ga terug</a></button>
+        <button id="button_volgende"><a href="/vragen_over_voeding" class="button" aria-label="Ga door naar de vragenlijst">Naar vragenlijst</a></button>
+    </div></main>
 <%- include('./partials/foot') %>

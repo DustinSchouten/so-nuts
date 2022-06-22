@@ -1,38 +1,226 @@
 <%- include('./partials/head') %>
-<header>
-    <img class="header_left_icon" src="images/dashboard_icon.png" alt="dashboard_icon">
-    <h1><%- pageTitle %></h1>
-    <img class="header_right_icon" src="images/dashboard_icon.png" alt="dashboard_icon">
-</header>
+<%- include('./partials/header') %>
+<div id="overlay" class="invisible"></div>
 <main id="container">
-    <section class="action_plan_filter_section">
-        <label for="action_plan_filter">Filter op:</label>
-        <select name="action_plan_filter" id="action_plan_filter">
-            <option value="alles">Alle action plans</option>
-            <option value="voeding">Alleen voeding</option>
-            <option value="beweging">Alleen beweging</option>
-        </select>
+    <section class="action_plan_filter_section" hidden>
+        <div class="action_plan_filter_div">
+            <label for="action_plan_categorie_filter">Categorie:</label>
+            <select name="action_plan_categorie_filter" id="action_plan_categorie_filter">
+                <option value="alles" aria_label="Alle action plans">Alle action plans</option>
+                <option value="voeding" aria_label="Alleen voeding">Alleen voeding</option>
+                <option value="beweging" aria_label="Alleen beweging">Alleen beweging</option>
+            </select>
+        </div>
+        <div class="action_plan_filter_div">
+            <label for="action_plan_geselecteerd_filter">Geselecteerd:</label>
+            <select name="action_plan_geselecteerd_filter" id="action_plan_geselecteerd_filter">
+                <option value="geselecteerd" aria_label="Alleen geselecteerd">Alleen geselecteerd</option>
+                <option value="ongeselecteerd" aria_label="Alleen ongeselecteerd">Alleen ongeselecteerd</option>
+            </select>
+        </div>
     </section>
-    <section class="action_plan action_plan_beweging">
+    <br>
+    <section class="action_plan action_plan_beweging action_plan_geselecteerd" data-id="1">
         <img class="action_plan_image" src="images/beweging_icon.png" alt="beweging_icon">
         <h2 class="action_plan_header">Elke week 150 minuten wandelen</h2>
+        <img class="action_plan_visibility_icon" src="images/visible_icon.png" alt="action_plan_visibility_icon" hidden>
+        <p class="action_plan_begindatum">Begindatum: 20-06-2022</p>
+        <p class="action_plan_einddatum">Einddatum: 26-06-2022</p>
+        <section class="action_plan_slider_section" hidden>
+            <div class="progress_bar_action_plan_value_box">
+                <p class="progress_bar_action_plan_min_value">0</p>
+                <p class="progress_bar_action_plan_value">0</p>
+                <p class="progress_bar_action_plan_max_value">150</p>
+            </div>
+            <div class="progress_bar_action_plan"></div>
+            <section class="buttons_list_action_plan">
+                <button class="min_button_action_plan" aria-label="min">-</button>
+                <button class="plus_button_action_plan" aria-label="plus">+</button>
+            </section>
+        </section>
+        <section class="action_plan_input_section_without_javascript">
+            <label for="action_plan_1">Vul aantal minuten in:</label>
+            <section>
+                <input type="text" name="action_plan_1" id="action_plan_1">
+                <button type="submit" class="action_plan_button_without_javascript" aria-label="update">Update</button>
+            </section>
+        </section>
+        <details class="history_screen">
+            <summary>Zie eerdere resultaten:</summary>
+            <p>Week vanaf maandag...</p>
+            <section>
+                <p class="history_date">13-06-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>150</strong></p>
+            </section>
+            <section>
+                <p class="history_date">06-06-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>120</strong></p>
+            </section>
+            <section>
+                <p class="history_date">30-05-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>150</strong></p>
+            </section>
+            <section>
+                <p class="history_date">23-05-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>90</strong></p>
+            </section>
+        </details>
     </section>
-    <section class="action_plan action_plan_voeding">
-        <img class="action_plan_image" src="images/voeding_icon.png" alt="voeding_icon">
-        <h2 class="action_plan_header">Elke dag minimaal 2 stukken fruit eten</h2>
-    </section>
-    <section class="action_plan action_plan_voeding">
+    <section class="action_plan action_plan_voeding action_plan_geselecteerd" data-id="2">
         <img class="action_plan_image" src="images/voeding_icon.png" alt="voeding_icon">
         <h2 class="action_plan_header">Elke week minimaal 3 eieren eten</h2>
+        <img class="action_plan_visibility_icon" src="images/visible_icon.png" alt="action_plan_visibility_icon" hidden>
+        <p class="action_plan_begindatum">Begindatum: 20-06-2022</p>
+        <p class="action_plan_einddatum">Einddatum: 26-06-2022</p>
+        <section class="action_plan_slider_section" hidden>
+            <div class="progress_bar_action_plan_value_box">
+                <p class="progress_bar_action_plan_min_value">0</p>
+                <p class="progress_bar_action_plan_value">0</p>
+                <p class="progress_bar_action_plan_max_value">3</p>
+            </div>
+            <div class="progress_bar_action_plan"></div>
+            <section class="buttons_list_action_plan">
+                <button class="min_button_action_plan" aria-label="min">-</button>
+                <button class="plus_button_action_plan" aria-label="plus">+</button>
+            </section>
+        </section>
+        <section class="action_plan_input_section_without_javascript">
+            <label for="action_plan_2">Vul aantal keer in:</label>
+            <section>
+                <input type="text" name="action_plan_2" id="action_plan_2">
+                <button type="submit" class="action_plan_button_without_javascript" aria-label="update">Update</button>
+            </section>
+        </section>
+        <details class="history_screen">
+            <summary>Zie eerdere resultaten:</summary>
+            <p>Week vanaf maandag...</p>
+            <section>
+                <p class="history_date">13-06-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>2</strong></p>
+            </section>
+            <section>
+                <p class="history_date">06-06-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>3</strong></p>
+            </section>
+            <section>
+                <p class="history_date">30-05-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>2</strong></p>
+            </section>
+            <section>
+                <p class="history_date">23-05-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>3</strong></p>
+            </section>
+        </details>
     </section>
-    <section class="action_plan action_plan_beweging">
+    <section class="action_plan action_plan_beweging action_plan_geselecteerd" data-id="3">
         <img class="action_plan_image" src="images/beweging_icon.png" alt="beweging_icon">
-        <h2 class="action_plan_header">Elke dag 30 minuten matig intensief bewegen</h2>
+        <h2 class="action_plan_header">Elke week minimaal 3 keer een half uur sporten</h2>
+        <img class="action_plan_visibility_icon" src="images/visible_icon.png" alt="action_plan_visibility_icon" hidden>
+        <p class="action_plan_begindatum">Begindatum: 20-06-2022</p>
+        <p class="action_plan_einddatum">Einddatum: 26-06-2022</p>
+        <section class="action_plan_slider_section" hidden>
+            <div class="progress_bar_action_plan_value_box">
+                <p class="progress_bar_action_plan_min_value">0</p>
+                <p class="progress_bar_action_plan_value">0</p>
+                <p class="progress_bar_action_plan_max_value">3</p>
+            </div>
+            <div class="progress_bar_action_plan"></div>
+            <section class="buttons_list_action_plan">
+                <button class="min_button_action_plan" aria-label="min">-</button>
+                <button class="plus_button_action_plan" aria-label="plus">+</button>
+            </section>
+        </section>
+        <section class="action_plan_input_section_without_javascript">
+            <label for="action_plan_3">Vul aantal eieren in:</label>
+            <section>
+                <input type="text" name="action_plan_3" id="action_plan_3">
+                <button type="submit" class="action_plan_button_without_javascript" aria-label="update">Update</button>
+            </section>
+        </section>
+        <details class="history_screen">
+            <summary>Zie eerdere resultaten:</summary>
+            <p>Week vanaf maandag...</p>
+            <section>
+                <p class="history_date">13-06-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>3</strong></p>
+            </section>
+            <section>
+                <p class="history_date">06-06-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>3</strong></p>
+            </section>
+            <section>
+                <p class="history_date">30-05-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>1</strong></p>
+            </section>
+            <section>
+                <p class="history_date">23-05-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>3</strong></p>
+            </section>
+        </details>
+    </section>
+    <section class="action_plan action_plan_voeding action_plan_geselecteerd" data-id="4">
+        <img class="action_plan_image" src="images/voeding_icon.png" alt="voeding_icon">
+        <h2 class="action_plan_header">Elke week minimaal 15 stukken fruit eten</h2>
+        <img class="action_plan_visibility_icon" src="images/visible_icon.png" alt="action_plan_visibility_icon" hidden>
+        <p class="action_plan_begindatum">Begindatum: 20-06-2022</p>
+        <p class="action_plan_einddatum">Einddatum: 26-06-2022</p>
+        <section class="action_plan_slider_section" hidden>
+            <div class="progress_bar_action_plan_value_box">
+                <p class="progress_bar_action_plan_min_value">0</p>
+                <p class="progress_bar_action_plan_value">0</p>
+                <p class="progress_bar_action_plan_max_value">15</p>
+            </div>
+            <div class="progress_bar_action_plan"></div>
+            <section class="buttons_list_action_plan">
+                <button class="min_button_action_plan" aria-label="min">-</button>
+                <button class="plus_button_action_plan" aria-label="plus">+</button>
+            </section>
+        </section>
+        <section class="action_plan_input_section_without_javascript">
+            <label for="action_plan_4">Vul aantal stukken fruit in:</label>
+            <section>
+                <input type="text" name="action_plan_4" id="action_plan_4">
+                <button type="submit" class="action_plan_button_without_javascript" aria-label="update">Update</button>
+            </section>
+        </section>
+        <details class="history_screen">
+            <summary>Zie eerdere resultaten:</summary>
+            <p>Week vanaf maandag...</p>
+            <section>
+                <p class="history_date">13-06-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>15</strong></p>
+            </section>
+            <section>
+                <p class="history_date">06-06-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>15</strong></p>
+            </section>
+            <section>
+                <p class="history_date">30-05-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>13</strong></p>
+            </section>
+            <section>
+                <p class="history_date">23-05-2022</p>
+                <div class="history_bar"></div>
+                <p class="history_bar_value"><strong>12</strong></p>
+            </section>
+        </details>
     </section>
 </main>
 <script type="module" src='javascript/app.js'></script>
 
-<!-- <script src="vragenlijst.js"></script>
-<script src="responseExamples.js"></script>
-<script src="javascript.js"></script> -->
 <%- include('./partials/foot') %>

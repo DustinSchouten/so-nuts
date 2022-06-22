@@ -1,0 +1,39 @@
+<p id="aantal_vragen_text">Deze vragenlijst bevat <%- data.length %> vragen</p>
+<% data.forEach(function(question,idx) { %>
+    <section class="vraag_container" data-id="vraag_<%- idx+1 %>">
+        <section class="vraag_nummer_en_stelling_container" data-id="vraag_nummer_en_stelling_container_<%- idx+1 %>">
+            <p class="vraag_nummer"><%- idx+1 %></p>
+            <% if (question.description != null) { %>
+                <label for="<%- question.id %>" class="vraag_stelling"><%- question.text %><br><span class="vraag_description">(<%- question.description %>)</span></label>
+            <% } else { %>
+                <label for="<%- question.id %>" class="vraag_stelling"><%- question.text %></label>
+            <% } %>
+        </section>
+        <section class="antwoord_invoer_container">
+            <% if (question.type == 'Open') { %>
+                <input id="<%- question.id %>" name="<%- question.id %>" type="text" class="antwoord_input" placeholder="Voer het antwoord in...">
+            <% } %>
+            <% if (question.type == 'MultipleChoice') { %>
+                <% question.answerOptions.forEach(function(answerOption,idx) { %>
+                    <section class="antwoord_optie">
+                        <input type="radio" name="<%- question.id %>" id="<%- answerOption.id %>" value="<%- answerOption.text %>">
+                        <label for="<%- answerOption.id %>"><%- answerOption.text %></label>
+                    </section>
+                <% }) %>
+            <% } %>
+            <% if (question.type == 'MultipleOpen') { %>
+                <% question.answerOptions.forEach(function(answerOption,idx) { %>
+                    <section class="antwoord_optie">
+                        <input type="checkbox" name="<%- question.id %>" id="<%- answerOption.id %>" value="<%- answerOption.text %>">
+                        <label for="<%- answerOption.id %>"><%- answerOption.text %></label>
+                    </section>
+                <% }) %>
+                <p class="openLabel_text">Anders nml:</p>
+                <input id="<%- question.id %>" name="<%- question.id %>" type="text" class="antwoord_input" placeholder="Voer het antwoord in...">
+            <% } %>
+            <% if (question.type == 'Integer' || question.type == 'Decimal') { %>
+                <input id="<%- question.id %>" name="<%- question.id %>" type="number" class="antwoord_input" placeholder="Voer het antwoord in als getal...">
+            <% } %>
+        </section>
+    </section>
+<% }) %>

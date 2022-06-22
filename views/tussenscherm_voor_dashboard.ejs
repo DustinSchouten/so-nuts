@@ -10,15 +10,13 @@
             <p>Intakelijst voeding</p>
             <%- include('./partials/cirkel_stap') %>
         </div>
-        <div class="stap_div volgende_stap laatste_cirkel_stap">
+        <div class="stap_div stap_afgerond laatste_cirkel_stap">
             <p>Intakelijst beweging</p>
             <%- include('./partials/cirkel_stap') %>
         </div>
     </section>
-    <p class="uitleg_tekst">Hartelijk dank voor het invullen van de intakelijst over voeding! Klik op 'volgende' om naar de intakelijst over beweging te gaan.</p>
-    <div class="button_div">
-        <button id="button_vorige"><a href="/vragen_over_voeding" class="button" aria-label="Ga terug naar vorige pagina">Ga terug</a></button>
-        <button id="button_volgende"><a href="/vragen_over_beweging" class="button" aria-label="Ga door naar de vragenlijst">Naar vragenlijst</a></button>
-    </div>
+    <p class="uitleg_tekst">U heeft nu alle benodigde vragenlijsten ingevuld en bent klaar om aan de slag te gaan! Klik op 'volgende' om naar het dashboard te gaan.</p>
+    <button class="button_naar_vragenlijst"><a href="/dashboard" class="button">Naar het dashboard</a></button>
+    <script type="module" src='javascript/app.js'></script>
 </main>
 <%- include('./partials/foot') %>

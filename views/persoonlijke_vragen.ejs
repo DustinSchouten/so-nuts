@@ -1,14 +1,15 @@
 <%- include('./partials/head') %>
 <%- include('./partials/header') %>
-<div id="progress_bar"></div>
+<div id="progress_bar_vragenlijst"></div>
 <main id="container">
-    <div class="button_div">
-        <button id="button_volgende"><a href="/tussenscherm_voor_vragen_voeding" class="button">Volgende</a></button>
-    </div>
+    <form method="POST" action="tussenscherm_voor_vragen_voeding" enctype="application/x-www-form-urlencoded">
+        <%- include('./partials/vragenlijst') %>
+        <div class="button_div">
+            <button id="button_vorige"><a href="/tussenscherm_voor_persoonlijke_vragen" class="button" aria-label="Ga terug naar vorige pagina">Ga terug</a></button>
+            <button type="submit" id="button_volgende" aria-label="Ga naar volgende pagina">Volgende</button>
+        </div>
+    </form>
 </main>
 <script type="module" src='javascript/app.js'></script>
 
-<!-- <script src="javascript/vragenlijst.js"></script> -->
-<!-- <script src="responseExamples.js"></script> -->
-<!-- <script src="javascript/javascript.js"></script> -->
 <%- include('./partials/foot') %>
