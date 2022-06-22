@@ -3,7 +3,7 @@ Dit project bevat een web app voor het project SO-NUTS. Dit project is bedoeld v
 
 Bij dit project is gebruikgemaakt van HTML, CSS, JavaScript, Express, ejs en Node.js Ook is er gebruikgemaakt van een externe API om data op te halen waaruit de vragenlijsten worden gegenereerd.
 
-Link naar live project: https://dustinschouten.github.io/so-nuts/
+Link naar live project: https://so-nuts-500895931.herokuapp.com/
 
 ## Design Rationale
 ### Debriefing
